@@ -1,24 +1,22 @@
-# README
+Project 1
+============
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Games Database
+-----------
+https://games-database-2022.herokuapp.com/
 
-Things you may want to cover:
+A simple game database where you can type in any name of game and it will find you a picture of the game.
 
-* Ruby version
+To Be Added
+-----------
+- A system that can recommend games to the user.
+- More stylish css on the website.
 
-* System dependencies
+Challenges
+----------
+- Finding a API that i could get to work for me. 
+- Once i found the right API getting to present what i wanted it to do.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Bugs/ Issues
+------------
+- The image sizing for the pictures it gets from the API they are all differnet sizes.
