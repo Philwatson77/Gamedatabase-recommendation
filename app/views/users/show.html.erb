@@ -1,0 +1,15 @@
+
+<table><h2>Recommended Games for <%= @user.email %>:</h2>
+    <tr>
+        <th>Game</th>
+        <th>Rating</th>
+    </tr>
+
+    <% @user.recommend_game.each do |key, value|%>
+    <tr>
+        <td><%= key.title %></td>
+        <td><%= value.round(2) %></td>
+    </tr>
+    <% end %>
+
+</table>

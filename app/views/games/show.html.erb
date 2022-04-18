@@ -1,2 +1,20 @@
-<h1>Games show</h1>
+<h1><%= @game.title %></h1>
 
+<%= image_tag @game.image, :class => 'feature' if @game.image.present? %>
+<ul>
+    <li>Name: <%= @game.title %></li>
+    <li>Release Date: <%= @game.release_date.strftime '%B %e, %Y' unless @game.release_date.nil? %></li>
+    <li>Gerne: <%= @game.genre %></li>
+    <li>Platforms: <%= @game.platforms %></li>
+    <li>Average Game Time:<%= @game.average_game_time %></li>
+</ul>
+<div class="controls">
+<% if @current_user.admin? %>
+    <%= link_to "Edit game", edit_game_path(@game) %>
+    <%= link_to "Delete game", @game, :method => 'delete', :data => { :confirm => 'Are you sure?' } %> 
+<% end %>
+</div>
+<% if @result.length > 0 %>
+    <%= image_tag @result[0]['image']['original_url'], :class => 'box-art' %>
+    <%= @result[0]['deck'] %>
+<% end %>

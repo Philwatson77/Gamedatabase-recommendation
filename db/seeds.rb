@@ -1,8 +1,8 @@
 Game.destroy_all
 
-Game.create(:title => 'Final Fantasy VII', :release_date => '31-1-1997', :genre => 'RPG', :platforms => 'PlayStation, Nintendo Switch, PlayStation 4, Android, PlayStation Portable, Xbox One, iOS, Microsoft Windows', :average_game_time => '83', :image => ''  )
+g1 = Game.create(:title => 'Final Fantasy VII', :release_date => '31-1-1997', :genre => 'RPG', :platforms => 'PlayStation, Nintendo Switch, PlayStation 4, Android, PlayStation Portable, Xbox One, iOS, Microsoft Windows', :average_game_time => '83', :image => ''  )
 
-Game.create(:title => 'Kingdom Hearts', :release_date => '28-03-2002', :genre => 'RPG', :platforms => 'PlayStaion 2', :average_game_time => '62', :image => '' )
+g2 = Game.create(:title => 'Kingdom Hearts', :release_date => '28-03-2002', :genre => 'RPG', :platforms => 'PlayStaion 2', :average_game_time => '62', :image => '' )
 
 Game.create(:title => 'God Of War', :release_date => '20-4-2018', :genre => 'Action-adventure', :platforms => 'PlayStation 4, Microsoft Windows', :average_game_time => '51', :image => '' )
 
@@ -13,3 +13,9 @@ Game.create(:title => 'Castlevania: Lords of Shadow', :release_date => '5-10-201
 Game.create(:title => 'Battletoads', :release_date => '01-06-1991', :genre => 'Beat em up, platform game', :platforms => 'Microsoft Windows, Xbox One, Nintendo Entertainment System, Sega Genesis, Game Boy, Game Gear, Amiga', :average_game_time => '8', :image => '' )
 
 puts "#{ Game.count } Games Created"
+
+User.destroy_all
+
+u1 = User.create :email => 'masterman@ga.co', :password => 'chicken', :admin => true
+u2 = User.create :email => 'airbender@ga.co', :password => 'chicken'
+puts "#{ User.count } Users Created"

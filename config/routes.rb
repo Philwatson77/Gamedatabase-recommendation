@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root :to => 'pages#home'
+  resources :games
   resources :users, :only => [:new, :create, :index]
 
   get '/login' => 'session#new'

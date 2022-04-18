@@ -7,27 +7,26 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="app/assets/stylesheets/style.css">
   </head>
 
   <body>
-
-    <nav>
+      <div class="container">
+     <nav>
       <%= link_to "Home", root_path %>
-      <%= if @current_user.present? %>
-        <%= if @currnet_user.admin? %>
-        <%= link_to "All users", users_path %>
+      <% if @current_user.present? %>
+          <% if @current_user.admin? %>
+          <%= link_to "All users", users_path %>
+          <%= link_to "New game", new_game_path %>
+          <% end %>
+      <%= link_to "All games", games_path %>
+      <%= link_to "Sign Out #{ @current_user.email }", login_path, :method => 'delete' %>
+        <% else %>
+        <%= link_to "Sign Up", new_user_path %>
+        <%= link_to "Sign In", login_path %>
         <% end %>
-        <%= link_to "New Game", new_game_path %>
-        <%= link_to "Sign out #{ @current_user.email }", login_path, method => 'delete' %>
-      <% else %>
-        <%= link_to "Sign up", new_user_path %>
-        <%= link_to "Sign in", login_path %>
-      <% end %>
     </nav>
-
-
     <%= yield %>
-
-    
+    </div>
   </body>
 </html>

@@ -1,2 +1,15 @@
 <h1>Games index</h1>
 
+<% @games.each do |game| %>
+    <%= image_tag game.image, :class => 'thumb' if game.image.present? %>
+        <ul>
+            <li>Title: <%= link_to game.title, game %></li>
+            <% unless game.release_date.nil? %>
+                <li>Release Date: <%= link_to game.release_date.strftime '%B %e, %Y'%></li>
+            <% end %>
+            <li>Genre: <%= link_to game.genre %></li>
+            <li>Average Game Time: <%= link_to game.average_game_time %></li>
+            <li>Platforms: <%= link_to game.platforms %></li>
+
+        </ul>
+<% end %>

@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
     before_action :fetch_user
-    belongs_to :game, optional :true
 
     private
     def fetch_user
@@ -13,7 +12,7 @@ class ApplicationController < ActionController::Base
     end
 
     def check_for_admin
-        redirect_to login_path unless (@current_user.presnt? && current_user.adimn?)
+        redirect_to login_path unless (@current_user.present? && @current_user.admin?)
 
     end
 
